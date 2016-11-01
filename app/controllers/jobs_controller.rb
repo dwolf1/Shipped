@@ -13,10 +13,12 @@ class JobsController < ApplicationController
   end
 
   def new 
+  @job = Jobs.new(title: [:])
+
   end
 
   def create
-        @jobs = Jobs.new()
+    @job = Jobs.new()
   end
 
   def destroy
