@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20161101191208) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "name"
     t.integer  "job_id"
     t.integer  "boat_id"
     t.boolean  "shipper"
