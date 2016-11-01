@@ -1,6 +1,9 @@
 <%= form_for @job do |f| %>
+  <%= f.label :title %>
   <%= f.text_field :title %>
+  <%= f.label :description %>
   <%= f.text_area :description, size: "44x10" %>
+  <%= f.label :origin %>
         <select name="origin">
         <option value="newyork">NYC</option>
         <option value="pittsburgh">PIT</option>
@@ -13,6 +16,7 @@
         <option value="la">LA</option>
         <option value="alaska">ASK</option>
       </select><br/>
+      <%= f.label :destination %>
       <select name="destination">
         <option value="newyork">NYC</option>
         <option value="pittsburgh">PIT</option>
