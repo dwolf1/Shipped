@@ -1,7 +1,19 @@
 <%= form_for @job do |f| %>
   <%= f.text_field :title %>
   <%= f.text_area :description, size: "44x10" %>
-        <select name="location">
+        <select name="origin">
+        <option value="newyork">NYC</option>
+        <option value="pittsburgh">PIT</option>
+        <option value="baltiomre">BA</option>
+        <option value="philly">PHILLY</option>
+        <option value="chicago">CHI</option>
+        <option value="miami">MIA</option>
+        <option value="neworleans">NO</option>
+        <option value="huston">HU</option>
+        <option value="la">LA</option>
+        <option value="alaska">ASK</option>
+      </select><br/>
+      <select name="destination">
         <option value="newyork">NYC</option>
         <option value="pittsburgh">PIT</option>
         <option value="baltiomre">BA</option>
