@@ -1,1 +1,6 @@
-<%= @jobs %>
+<%= @message %>
+<% @jobs.each do |job| %>
+<%= job.id %>.
+<%= job.title %>
+<%= link_to 'Show', job_path(job.id) %> <br>
+<% end  %>
