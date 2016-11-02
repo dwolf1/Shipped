@@ -1,4 +1,6 @@
 <%= form_for @boat do |f| %>
+  <%= f.label :picture_of_boat %><br>
+  <%= f.file_field :avatar %><br>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :amount_that_can_be_shipped %><br>

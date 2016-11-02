@@ -1,9 +1,10 @@
 class JobsController < ApplicationController
 # testing miguel
   def index
+    @message = "These are all of our shipping jobs"
     @jobs = Job.all
-    
-  end 
+
+  end
 
   def show
   end
@@ -14,13 +15,13 @@ class JobsController < ApplicationController
   def update
   end
 
-  def new 
+  def new
     @message = "form for jober. after devics sign up that users should be drected to this page"
   @job = Job.new(title: params[:title], origin: params[:origin], destination: params[:destination])
   end
 
   def create
-    @job = Job.new() 
+    @job = Job.new()
   end
 
 
