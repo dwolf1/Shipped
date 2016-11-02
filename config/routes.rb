@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 	# Job Routes
 	get    '/jobs' 	 	  	=> 'jobs#index', as: "jobs"
 	get    '/jobs/new' 	  	=> 'jobs#new', as: "new_job"
-	post   '/jobs' 		  	=> 'jobs#create'
+	post   '/jobs/new' 		  	=> 'jobs#create'
 	get    '/jobs/:id' 	  	=> 'jobs#show', as: "job"
 	get    '/jobs/:id/edit' => 'jobs#edit', as: "edit_job"
 	put    '/jobs/:id'	  	=> 'jobs#update'

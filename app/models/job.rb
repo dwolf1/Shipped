@@ -1,7 +1,7 @@
 class Job < ApplicationRecord
 
 	has_and_belongs_to_many :boats
-	belongs_to :users
+	# belongs_to :users
 
 	validates :title, uniqueness: true
 	validates :description, length: { minimum: 50,
