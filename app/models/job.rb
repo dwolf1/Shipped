@@ -2,7 +2,8 @@ class Job < ApplicationRecord
 
 	has_and_belongs_to_many :boats
 	# belongs_to :users
-
+has_many :assignments
+has_many :boats, through: :assignments
 	validates :title, uniqueness: true
 	validates :description, length: { minimum: 50,
     	too_short: "%{count} characters is the too short" }
