@@ -1,6 +1,6 @@
 <%= @message %>
 <% @boats.each do |boat| %>
 <%= boat.id %>.
-<%= boat.title %>
+<%= boat.name %>
 <%= link_to 'Show', boat_path(boat.id) %> <br>
 <% end  %>

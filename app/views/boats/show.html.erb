@@ -1,0 +1,20 @@
+<div id="Info">
+
+    <p>
+      <%= image_tag @boat.avatar.url(:medium) %>
+    <p>
+
+    <p>
+        <strong>Boat name:</strong>
+       <span> <%= @boat.name %> </span>
+    </p>
+
+
+    <p>
+        <strong>Amount that can be shipped:</strong>
+        <span> <%= @boat.amount_that_can_be_shipped %> </span>
+    </p>
+    <p>
+        <strong>Location:</strong>
+        <span> <%= @boat.location %> </span>
+    </p>
