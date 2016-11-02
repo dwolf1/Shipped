@@ -1,4 +1,12 @@
 <%= form_for @job do |f| %>
+<% if @job.errors.any? %>
+      <%= pluralize(@job.errors.count, "error") %>
+      Prohibited boats to be assigned 
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+  <% end %>
+
   <%= f.label :title %><br>
   <%= f.text_field :title %><br>
   <%= f.label :description %><br>

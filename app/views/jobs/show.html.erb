@@ -1,7 +1,7 @@
     <div id="Info">
         <p> 
             <strong>Job title:</strong>
-           <span><%=@jobs.title%></span>
+           <span> <%= @job.title %> </span>
         </p>
      
 
@@ -11,17 +11,17 @@
         </p>
         <p>
             <strong>origin:</strong>
-            <span><%=  @job.origin%> </span>
+            <span> <%= @job.origin %> </span>
         </p>
       
         <p>
             <strong>destination:</strong>
-            <span> <%=@job.destination %> </span>
+            <span> <%= @job.destination %> </span>
         </p>
 
             <p>
             <strong> amount of containers: </strong>
-            <span><%= job.amount_of_containers%></span>
+            <span> <%= @job.amount_of_containers %> </span>
            
             </p>
     </div>
