@@ -44,9 +44,7 @@ ActiveRecord::Schema.define(version: 20161101191208) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "job_id"
-    t.integer  "boat_id"
-    t.boolean  "shipper"
+    t.string   "shipper"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -59,9 +57,7 @@ ActiveRecord::Schema.define(version: 20161101191208) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["boat_id"], name: "index_users_on_boat_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["job_id"], name: "index_users_on_job_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

@@ -3,8 +3,7 @@ class JobsController < ApplicationController
   def index
     @message = "These are all of our shipping jobs"
     @jobs = Job.all
-
-  end
+  end 
 
   def show
      @job = Job.find(params[:id])
@@ -18,7 +17,7 @@ class JobsController < ApplicationController
 
   def new
     @message = "form for jober. after devics sign up that users should be drected to this page"
-  @job = Job.new
+    @job = Job.new
   end
 
   def create
