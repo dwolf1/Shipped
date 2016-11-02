@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-
+# testing miguel
   def index
     @jobs = Job.all
   end 
