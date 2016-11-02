@@ -15,9 +15,9 @@
   <%= f.number_field :cost_of_job %><br>
   <%= f.hidden_field :user_id, value: current_user.id %>
  
-
-
-<%= select(:job, :origin, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'],['la', 'la'], ['ask', 'ask']]) %>
-<%= select(:job, :destination, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'], ['la', 'la'], ['ask', 'ask']]) %>
+<%= f.label :origin %><br>
+<%= select(:job, :origin, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'],['la', 'la'], ['ask', 'ask']]) %><br>
+<%= f.label :destination %><br>
+<%= select(:job, :destination, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'], ['la', 'la'], ['ask', 'ask']]) %><br>
 <%= f.submit %>
 <% end %>
