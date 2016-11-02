@@ -14,12 +14,11 @@ class BoatsController < ApplicationController
   end
 
   def new
-
   @boat = Boat.new(name: params[:name], amount_that_can_be_shipped: params[:amount_that_can_be_shipped], location: params[:location])
   end
 
   def create
-    @boat = Boat.new()
+  @boat = Boat.new()
   end
 
 

@@ -1,9 +1,9 @@
 <%= form_for @job do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_area :description, size: "44x10" %>
-  <%= f.label :origin %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, size: "44x10" %><br>
+  <%= f.label :origin %><br>
         <select name="origin">
         <option value="newyork">NYC</option>
         <option value="pittsburgh">PIT</option>
@@ -16,7 +16,7 @@
         <option value="la">LA</option>
         <option value="alaska">ASK</option>
       </select><br/>
-      <%= f.label :destination %>
+      <%= f.label :destination %><br>
       <select name="destination">
         <option value="newyork">NYC</option>
         <option value="pittsburgh">PIT</option>
@@ -29,6 +29,8 @@
         <option value="la">LA</option>
         <option value="alaska">ASK</option>
       </select><br/>
+  <%= f.label :Cost %><br>
+  <%= f.number_field :cost_of_job %><br>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit "Create" %>
 <% end %>
