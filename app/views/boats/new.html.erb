@@ -1,24 +1,21 @@
-<%= form_for @boat do |f| %>
+<%= form_for @boat, url: new_boat_path do |f| %><% if @boat.errors.any? %>
+      <%= pluralize(@boat.errors.count, "error") %>
+      Prohibited boats to be assigned
+      <% @boat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+  <% end %>
+
   <%= f.label :picture_of_boat %><br>
   <%= f.file_field :avatar %><br>
   <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+  <%= f.text_area :name %><br>
   <%= f.label :amount_that_can_be_shipped %><br>
   <%= f.number_field :amount_that_can_be_shipped %><br>
-  <%= f.label :location %><br>
-        <select name="location">
-        <option value="newyork">NYC</option>
-        <option value="pittsburgh">PIT</option>
-        <option value="baltiomre">BA</option>
-        <option value="philly">PHILLY</option>
-        <option value="chicago">CHI</option>
-        <option value="miami">MIA</option>
-        <option value="neworleans">NO</option>
-        <option value="huston">HU</option>
-        <option value="la">LA</option>
-        <option value="alaska">ASK</option>
-      </select><br/>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Create" %>
+
+
+<%= f.label :location %><br>
+<%= select(:boat, :location, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'],['la', 'la'], ['ask', 'ask']]) %><br>
+
+<%= f.submit %>
 <% end %>

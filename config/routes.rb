@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   	# Boat Routes
 	get    '/boats' 	 	  	=> 'boats#index', as: "boats"
 	get    '/boats/new' 	  	=> 'boats#new', as: "new_boat"
-	post   '/boats' 		  	=> 'boats#create'
+	post   '/boats/new' 		  	=> 'boats#create'
 	get    '/boats/:id' 	  	=> 'boats#show', as: "boat"
 	get    '/boats/:id/edit' 	=> 'boats#edit', as: "edit_boat"
 	put    '/boats/:id'	  		=> 'boats#update'
