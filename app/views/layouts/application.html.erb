@@ -10,14 +10,20 @@
 
   <body>
 	<nav>
-
+		
 		<% if (user_signed_in?) %>
 			<%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
+			<% if (current_user.shipper=="Shipper") %>
+				<%= link_to("Create New Boat", new_boat_path)  %>
+			<% else (current_user.shipper=="Jobber")%>
+				<%= link_to("Create New Job", new_job_path)  %>
+			<% end %>
 		<% else %>
 			<%= link_to("Sign In", new_user_session_path) %>
 			<%= link_to("Sign Up", new_user_registration_path) %>
 		<% end %>
-
+		<%= link_to("All Boats", boats_path)  %>
+		<%= link_to("All Jobs", jobs_path)  %>
 	</nav>
     <%= yield %>
   </body>
