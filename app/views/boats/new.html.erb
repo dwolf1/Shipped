@@ -1,0 +1,21 @@
+<%= form_for @boat do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :amount_that_can_be_shipped %>
+  <%= f.number_field :amount_that_can_be_shipped %>
+  <%= f.label :location %>
+        <select name="location">
+        <option value="newyork">NYC</option>
+        <option value="pittsburgh">PIT</option>
+        <option value="baltiomre">BA</option>
+        <option value="philly">PHILLY</option>
+        <option value="chicago">CHI</option>
+        <option value="miami">MIA</option>
+        <option value="neworleans">NO</option>
+        <option value="huston">HU</option>
+        <option value="la">LA</option>
+        <option value="alaska">ASK</option>
+      </select><br/>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Create" %>
+<% end %>
