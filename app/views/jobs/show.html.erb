@@ -23,7 +23,11 @@
             <strong> amount of containers: </strong>
             <span> <%= @job.amount_of_containers %> </span>
            
-            </p>
+            </p> 
+            <%= @job_and_boats %>
 
-            
+            <%#= form_for @boat, url: new_boat_path do |f| %>
+            <%#= label :boats %>
+            <%#= select (:boat, @boat) %>
+            <#4% end %>
     </div>
