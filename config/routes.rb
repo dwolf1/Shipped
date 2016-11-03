@@ -26,4 +26,6 @@ Rails.application.routes.draw do
 	put    '/jobs/:id'	  	=> 'jobs#update'
 	patch  '/jobs/:id'		=> 'jobs#update'
 	delete '/jobs/:id' 	  	=> 'jobs#destroy'
+
+  post "/assignments/new" => "assignments#create"
 end
