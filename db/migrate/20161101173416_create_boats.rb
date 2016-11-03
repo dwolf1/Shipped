@@ -5,6 +5,7 @@ class CreateBoats < ActiveRecord::Migration[5.0]
       t.integer :amount_that_can_be_shipped
       t.string :location
       t.references :job, foreign_key: true
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end
