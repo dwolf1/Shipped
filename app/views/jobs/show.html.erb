@@ -32,12 +32,7 @@
             <%#= select (:boat, @boat) %>
             <#4% end %>
 
-
               <strong> Pick a boat for this Job </strong> <br>
                 <%= select_tag 'boat',  options_from_collection_for_select(Boat.all, :id, :name) %>
-
-
-
-
 
     </div>
