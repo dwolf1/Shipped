@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   devise_for :users, controllers: { registrations: "registrations" }
   # resources :boats
   # resources :jobs
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   	# Boat Routes
 	get    '/boats' 	 	  	=> 'boats#index', as: "boats"
 	get    '/boats/new' 	  	=> 'boats#new', as: "new_boat"
-	post   '/boats/new' 		  	=> 'boats#create'
+	post   '/boats/new' 		=> 'boats#create'
 	get    '/boats/:id' 	  	=> 'boats#show', as: "boat"
 	get    '/boats/:id/edit' 	=> 'boats#edit', as: "edit_boat"
 	put    '/boats/:id'	  		=> 'boats#update'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
 	# Job Routes
 	get    '/jobs' 	 	  	=> 'jobs#index', as: "jobs"
 	get    '/jobs/new' 	  	=> 'jobs#new', as: "new_job"
-	post   '/jobs/new' 		  	=> 'jobs#create'
+	post   '/jobs/new' 		=> 'jobs#create'
 	get    '/jobs/:id' 	  	=> 'jobs#show', as: "job"
 	get    '/jobs/:id/edit' => 'jobs#edit', as: "edit_job"
 	put    '/jobs/:id'	  	=> 'jobs#update'
