@@ -1,25 +1,26 @@
     <div id="Info">
-        <p> 
+        <p>
             <strong>Job title:</strong>
            <span> <%= @job.title %> </span>
         </p>
-     
+
 
         <p>
-            <strong>description:</strong>
+            <strong>Description:</strong>
             <span> <%= @job.description %> </span>
         </p>
         <p>
-            <strong>origin:</strong>
+            <strong>Origin:</strong>
             <span> <%= @job.origin %> </span>
         </p>
-      
+
         <p>
-            <strong>destination:</strong>
+            <strong>Destination:</strong>
             <span> <%= @job.destination %> </span>
         </p>
 
             <p>
+
             <strong> amount of containers: </strong>
             <span> <%= @job.amount_of_containers %> </span>
            
@@ -30,4 +31,13 @@
             <%#= label :boats %>
             <%#= select (:boat, @boat) %>
             <#4% end %>
+
+
+              <strong> Pick a boat for this Job </strong> <br>
+                <%= select_tag 'boat',  options_from_collection_for_select(Boat.all, :id, :name) %>
+
+
+
+
+
     </div>

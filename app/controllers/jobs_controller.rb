@@ -3,12 +3,12 @@ class JobsController < ApplicationController
   def index
     @message = "These are all of our shipping jobs"
     @jobs = Job.all
-  end 
+  end
 
   def show
      @job = Job.find(params[:id])
+
      #@boat = Boat.find(params[:user_id])
-     
   end
 
   def edit
@@ -26,7 +26,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       redirect_to job_path(@job)
-    else 
+    else
       render new_job_path
     end
   end
@@ -36,7 +36,7 @@ class JobsController < ApplicationController
   end
 
   #--------------
-private 
+private
 
  def job_params
     params.require(:job).permit(:title, :description, :origin, :destination, :cost, :cost_of_job, :user_id)
