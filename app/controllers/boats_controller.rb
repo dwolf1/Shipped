@@ -1,7 +1,6 @@
 class BoatsController < ApplicationController
 
   def index
-    @message = "These are all of our boats"
     @boats = Boat.all
   end
 

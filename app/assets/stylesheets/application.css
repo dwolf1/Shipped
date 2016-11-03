@@ -12,4 +12,53 @@
  *
  *= require_tree .
  *= require_self
+ *= require_bootstrap
  */
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2:600|Roboto:300,400');
+
+select {
+	min-width: 180px;
+}
+
+.navbar-brand {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 27px;
+	line-height: 18px;
+	letter-spacing: 1px;
+}
+
+.nav li, .title, #info {
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav li {
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+.title {
+	margin: 35px auto;
+	font-weight: 600;
+	font-size: 35px;
+	letter-spacing: 1px;
+}
+
+.list-item {
+	margin-bottom: 20px;
+}
+
+.list-item strong {
+	font-size: 15px;
+}
+
+.list-item img {
+	border: 3px solid black;
+	border-radius: 5px;
+}
+
+#info {
+	max-width: 700px;
+	font-size: 14px;
+}
+

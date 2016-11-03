@@ -1,47 +1,34 @@
-    <div id="Info">
-        <p>
-            <strong>Job title:</strong>
-           <span> <%= @job.title %> </span>
-        </p>
+<h2 class="title"><%= @job.title %></h2>
 
 
-        <p>
+<div id="info" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 list-item">
             <strong>Description:</strong>
             <span> <%= @job.description %> </span>
-        </p>
-        <p>
+        </div>
+        <div class="col-sm-6 list-item">
             <strong>Origin:</strong>
             <span> <%= @job.origin %> </span>
-        </p>
-
-        <p>
+        </div>
+        <div class="col-sm-6 list-item">
             <strong>Destination:</strong>
             <span> <%= @job.destination %> </span>
-        </p>
-
-            <p>
-
-            <strong> amount of containers: </strong>
+        </div>
+        <div class="col-sm-6 list-item">
+            <strong>Amount of Containers:</strong>
             <span> <%= @job.amount_of_containers %> </span>
-
-            </p>
-            <%#= @job_and_boats %>
-
-            <%#= form_for @boat, url: new_boat_path do |f| %>
-            <%#= label :boats %>
-            <%#= select (:boat, @boat) %>
-
-
-
-              <strong> Pick a boat for this Job </strong> <br>
-              <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
-                <%= select_tag 'boat',  options_from_collection_for_select(Boat.all, :id, :name) %>
+        </div>
+        <div class="col-sm-12 list-item">
+            <strong> Pick a boat for this job </strong><br>
+            <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
+                <%= select_tag 'boat', options_from_collection_for_select(Boat.all, :id, :name) %>
                 <%= f.hidden_field :job_id, value: @job.id %>
                 <%= button_to 'Submit', new_assignment_path %>
-              <% end %>
-
-
-
-
-
+            <% end %>
+        </div>
+        <div class="col-sm-12 list-item">
+            <%= link_to("Edit", edit_job_path) %>
+        </div>
     </div>
+</div>

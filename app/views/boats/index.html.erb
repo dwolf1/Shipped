@@ -1,6 +1,20 @@
-<%= @message %>
-<% @boats.each do |boat| %>
-<%= boat.id %>.
-<%= boat.name %>
-<%= link_to 'Show', boat_path(boat.id) %> <br>
-<% end  %>
+<h2 class="title">Boats Index</h2>
+
+<div id="info" class="container-fluid">
+    <div class="table-responsive">
+    	<table class="table">
+			<tr>
+				<td>Boat ID</td>
+				<td>Name</td>
+				<td>Link To</td>
+			</tr>
+			<% @boats.each do |boat| %><br>
+			<tr>
+				<td><%= boat.id %></td>
+				<td><%= boat.name %></td>
+				<td><%= link_to 'Show', boat_path(boat.id) %></td>
+			</tr>
+			<% end %>
+		</table>
+    </div>
+</div>

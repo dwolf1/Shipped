@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
 # testing miguel
   def index
-    @message = "These are all of our shipping jobs"
     @jobs = Job.all
   end
 
@@ -26,7 +25,6 @@ class JobsController < ApplicationController
   end
 
   def new
-    @message = "form for jober. after devics sign up that users should be drected to this page"
     @job = Job.new
   end
 
