@@ -11,9 +11,18 @@ class BoatsController < ApplicationController
   end
 
   def edit
+    @boat = Boat.find(params[:id])
   end
 
   def update
+    @boat = Boat.find(params[:id])
+		@boat.update(boat_params)
+
+    if @boat.save
+      redirect_to boat_path(@boat)
+    else
+      render edit_boat_path
+    end
   end
 
   def new

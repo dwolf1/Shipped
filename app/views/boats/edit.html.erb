@@ -1,0 +1,18 @@
+
+
+<%= form_for @boat do |f| %>
+
+  <%= f.label :picture_of_boat %><br>
+  <%= image_tag @boat.avatar.url(:medium) %>
+  <%= f.file_field :avatar %><br>
+  <%= f.label :name %><br>
+  <%= f.text_area :name %><br>
+  <%= f.label :amount_that_can_be_shipped %><br>
+  <%= f.number_field :amount_that_can_be_shipped %><br>
+
+
+<%= f.label :location %><br>
+<%= select(:boat, :location, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'],['la', 'la'], ['ask', 'ask']]) %><br>
+
+<%= f.submit %>
+<% end %>
