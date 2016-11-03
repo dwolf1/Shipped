@@ -9,8 +9,6 @@ class JobsController < ApplicationController
      @job = Job.find(params[:id])
      #@boat = Boat.find(params[:user_id])
      
-
-
   end
 
   def edit
@@ -41,7 +39,7 @@ class JobsController < ApplicationController
 private 
 
  def job_params
-        params.require(:job).permit(:title, :description, :origin, :destination, :cost, :cost_of_job, :user_id)
+    params.require(:job).permit(:title, :description, :origin, :destination, :cost, :cost_of_job, :user_id)
   end
 
 end

@@ -7,6 +7,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @all_job = Job.all
   end
 
   def edit
@@ -36,5 +37,4 @@ end
   def boat_params
     params.require(:boat).permit(:avatar,:name, :amount_that_can_be_shipped, :location, :user_id)
   end
-
 end

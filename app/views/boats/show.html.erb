@@ -17,4 +17,12 @@
     <p>
         <strong>Location:</strong>
         <span> <%= @boat.location %> </span>
+
     </p>
+    <h1>all jobs avalable</h1>
+
+ <%= select_tag "jobs", options_from_collection_for_select(Job.all, :id, :title) %><br>
+       
+
+
+       
