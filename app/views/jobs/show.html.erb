@@ -33,6 +33,10 @@
 
 
               <strong> Pick a boat for this Job </strong> <br>
+              <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
                 <%= select_tag 'boat',  options_from_collection_for_select(Boat.all, :id, :name) %>
+                <%= f.hidden_field :job_id, value: @job.id %>
+                <%= button_to 'Submit', new_assignment_path %>
+              <% end %>
 
     </div>
