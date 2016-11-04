@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 d3.json("/d3_data", function(error, data){
   var width = 500;
-  var height = 200;
+  var height = 300;
 
 var widthScale = d3.scale.linear()
     .domain([0, 60])
@@ -13,7 +13,7 @@ var widthScale = d3.scale.linear()
     .range(["red", "blue"])   
 
    var axis = d3.svg.axis()
-    .ticks(1000)
+    .ticks(5)
     .scale(widthScale);   
 
 var canvas = d3.select('#d3')  
@@ -35,7 +35,8 @@ var bars = canvas.selectAll('rect')
 
       canvas.append('g')
       .attr("transform", "translate(0, 470)")
-      .call(axis);      
+      .call(axis);   
+ 
 
 });
 });
