@@ -1,3 +1,6 @@
+<%= @aaa.each do |a|  %>
+<%= a.id %>
+<% end %>
 <div id="Info">
 
     <p>
@@ -21,8 +24,11 @@
     </p>
     <h1>all jobs avalable</h1>
 
- <%= select_tag "jobs", options_from_collection_for_select(Job.all, :id, :title) %><br>
-       
 
-
+              <strong> Pick a job for this boat </strong> <br>
+              <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
+                <%= f.select "job_id", options_from_collection_for_select(Job.all, :id, :title) %><br>
+                <%= f.hidden_field :boat_id, value: @boat.id %>
+                <%= button_to 'Submit', new_assignment_path %>
+              <% end %>
        

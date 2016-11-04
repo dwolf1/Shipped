@@ -8,11 +8,6 @@ class ApplicationController < ActionController::Base
   		jobs_path
   	end
   end
-# testing ========
-def show 
-@job = Job.find(params[:id])  
-@job_and_boats = @job.boats
-p @job_and_boats
-#===================
-end
+
+
 end

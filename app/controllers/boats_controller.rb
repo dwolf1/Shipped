@@ -8,6 +8,9 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @all_job = Job.all
+    @boats_and_job = @boat.jobs
+    p @boats_and_job
+    @aaa = @boat.assignments
   end
 
   def edit

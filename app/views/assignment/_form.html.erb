@@ -1,0 +1,6 @@
+<%= form_for @assignment, url: {controller: "assignments", action: "create"} do |f| %>
+  <%= select_tag "jobs", options_from_collection_for_select(Job.all, :id, :title) %><br>
+  <%= f.hidden_field :boat_id, value: @boat_id %>
+  <%= f.hidden_field :job_id, value: @job_id %>
+  <%= button_to 'Submit', new_assignment_path %>
+<% end %>

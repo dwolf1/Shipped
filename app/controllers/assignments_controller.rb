@@ -1,13 +1,11 @@
 class AssignmentsController < ApplicationController
 skip_before_filter  :verify_authenticity_token
   def create
-    p "it was here"
-    @assignment = Assignment.create(boat_id: params[:boat], job_id: params[:assignment][:job_id])
+      @assignment = Assignment.create(boat_id: params[:assignment][:boat_id], job_id: params[:assignment][:job_id])
     if @assignment.save
       redirect_to "/"
-    else
-      render jobs_path
+    else 
+      render boats_path
     end
-    # @boat = Boat.find_by(:boat [:id])
   end
 end

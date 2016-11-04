@@ -20,10 +20,8 @@
         </p>
 
             <p>
-
             <strong> amount of containers: </strong>
             <span> <%= @job.amount_of_containers %> </span>
-
             </p>
             <%#= @job_and_boats %>
 
@@ -32,11 +30,12 @@
             <%#= select (:boat, @boat) %>
 
 
-              <strong> Pick a boat for this Job </strong> <br>
+              <strong> Pick a boat for this Job </strong> 
+                            <strong> Pick a job for this boat </strong> <br>
               <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
-                <%= select_tag 'boat',  options_from_collection_for_select(Boat.all, :id, :name) %>
+                <%= f.select "boat_id", options_from_collection_for_select(Boat.all, :id, :name) %><br>
                 <%= f.hidden_field :job_id, value: @job.id %>
                 <%= button_to 'Submit', new_assignment_path %>
               <% end %>
-
+              <br>
     </div>

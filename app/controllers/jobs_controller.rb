@@ -7,7 +7,10 @@ class JobsController < ApplicationController
 
   def show
      @job = Job.find(params[:id])
-
+    # testing ========
+    @job_and_boats = @job.boats
+    p @job_and_boats
+      #===================
      #@boat = Boat.find(params[:user_id])
   end
 
