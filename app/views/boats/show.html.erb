@@ -1,7 +1,3 @@
-
-
-       
-
 <h2 class="title"><%= @boat.name %></h2>
 
 <div id="info" class="container-fluid">
@@ -14,13 +10,12 @@
             <span> <%= @boat.location %> </span>
         </div>
         <div class="col-sm-12 list-item">
-            <strong>Amount that can be shipped:</strong>
+            <strong>Capacity:</strong>
             <span> <%= @boat.amount_that_can_be_shipped %> </span>
         </div>
         <div class="col-sm-12 list-item">
-                <strong> Pick a job for this boat </strong> <br>
               <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
-                <%= f.select "job_id", options_from_collection_for_select(Job.all, :id, :title) %><br>
+                <%= f.select "job_id", options_from_collection_for_select(Job.all, :id, :title),  {:prompt => "Assign Job"} %>
                 <%= f.hidden_field :boat_id, value: @boat.id %>
                 <%= button_to 'Submit', new_assignment_path %>
               <% end %>

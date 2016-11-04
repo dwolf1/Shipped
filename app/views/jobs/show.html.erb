@@ -2,36 +2,30 @@
 
 
 <div id="info" class="container-fluid">
-    <div class="row">
+    <div class="row" style="text-align: left">
         <div class="col-sm-12 list-item">
             <strong>Description:</strong>
             <span> <%= @job.description %> </span>
         </div>
-        <div class="col-sm-6 list-item">
+        <div class="col-sm-12 list-item">
             <strong>Origin:</strong>
             <span> <%= @job.origin %> </span>
         </div>
-        <div class="col-sm-6 list-item">
+        <div class="col-sm-12 list-item">
             <strong>Destination:</strong>
             <span> <%= @job.destination %> </span>
-
-        </p>
-
-            <p>
-            <strong> amount of containers: </strong>
+        </div>
+        <div class="col-sm-12 list-item">
+            <strong>Containers: </strong>
             <span> <%= @job.amount_of_containers %> </span>
-            </p>
-         
-
-              <strong> Pick a boat for this Job </strong> 
-                            <strong> Pick a job for this boat </strong> <br>
+        </div>
+        <div class="col-sm-12 list-item">
               <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
-                <%= f.select "boat_id", options_from_collection_for_select(Boat.all, :id, :name) %><br>
+                <%= f.select "boat_id", options_from_collection_for_select(Boat.all, :id, :name), {:prompt => "Assign Boat"} %>
                 <%= f.hidden_field :job_id, value: @job.id %>
                 <%= button_to 'Submit', new_assignment_path %>
               <% end %>
-              <br>
-
+        </div>
     </div>
 </div>
 
