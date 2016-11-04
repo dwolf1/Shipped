@@ -1,6 +1,21 @@
-<%= @message %>
-<% @jobs.each do |job| %><br>
-<%= job.id %>
-<%= job.title %><br>
-<%= link_to 'Show', job_path(job.id) %> <br>
-<% end  %>
+<h2 class="title">Jobs Index</h2>
+
+<div id="info" class="container-fluid">
+    <div class="table-responsive">
+    	<table class="table">
+			<tr>
+				<td>Job ID</td>
+				<td>Title</td>
+				<td>Link To</td>
+			</tr>
+			<% @jobs.each do |job| %><br>
+			<tr>
+				<td><%= job.id %></td>
+				<td><%= job.title %></td>
+				<td><%= link_to 'Show', job_path(job.id) %></td>
+			</tr>
+			<% end %>
+		</table>
+    </div>
+</div>
+

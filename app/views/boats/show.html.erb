@@ -1,34 +1,36 @@
-<%= @aaa.each do |a|  %>
-<%= a.id %>
-<% end %>
-<div id="Info">
-
-    <p>
-      <%= image_tag @boat.avatar.url(:medium) %>
-    <p>
-
-    <p>
-        <strong>Boat name:</strong>
-       <span> <%= @boat.name %> </span>
-    </p>
 
 
-    <p>
-        <strong>Amount that can be shipped:</strong>
-        <span> <%= @boat.amount_that_can_be_shipped %> </span>
-    </p>
-    <p>
-        <strong>Location:</strong>
-        <span> <%= @boat.location %> </span>
+       
 
-    </p>
-    <h1>all jobs avalable</h1>
+<h2 class="title"><%= @boat.name %></h2>
 
-
-              <strong> Pick a job for this boat </strong> <br>
+<div id="info" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 list-item">
+            <%= image_tag @boat.avatar.url(:medium) %>
+        </div>
+        <div class="col-sm-12 list-item">
+            <strong>Location:</strong>
+            <span> <%= @boat.location %> </span>
+        </div>
+        <div class="col-sm-12 list-item">
+            <strong>Amount that can be shipped:</strong>
+            <span> <%= @boat.amount_that_can_be_shipped %> </span>
+        </div>
+        <div class="col-sm-12 list-item">
+                <strong> Pick a job for this boat </strong> <br>
               <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
                 <%= f.select "job_id", options_from_collection_for_select(Job.all, :id, :title) %><br>
                 <%= f.hidden_field :boat_id, value: @boat.id %>
                 <%= button_to 'Submit', new_assignment_path %>
               <% end %>
-       
+        </div>
+        <div class="col-sm-12 list-item">
+            <%= link_to("Edit", edit_boat_path) %>
+        </div>
+    </div>
+
+           
+
+</div>
+

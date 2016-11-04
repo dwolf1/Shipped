@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
 # testing miguel
   def index
-    @message = "These are all of our shipping jobs"
     @jobs = Job.all
   end
 
@@ -15,13 +14,20 @@ class JobsController < ApplicationController
   end
 
   def edit
+    @job = Job.find(params[:id])
   end
 
   def update
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    if @job.save
+      redirect_to job_path(@job)
+    else
+      render edit_job_path
+    end
   end
 
   def new
-    @message = "form for jober. after devics sign up that users should be drected to this page"
     @job = Job.new
   end
 
@@ -36,6 +42,8 @@ class JobsController < ApplicationController
 
 
   def destroy
+    Job.delete(params[:id])
+  redirect_to url_for(:controller => :jobs, :action => :index)
   end
 
   #--------------

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
     <title>ShippedProject</title>
+
+    <title>Shippr</title>
+    <%= favicon_link_tag 'logo.png' %>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,27 +18,51 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
     		<div class="navbar-header"> 
-				 <a class="navbar-brand" href="#">
-				 	<img src="/images/logo.png">
-				 </a>
+    			<%= link_to(root_path, class: "navbar-brand")  do %>
+				 	SHIPPR
+				 <% end %>
     		</div>
-		<% if (user_signed_in?) %>
+    	
+			<% if (user_signed_in?) %>
+				<ul class="nav navbar-nav">
+					<li><%= link_to("Boat Index", boats_path)  %></li>
+					<li><%= link_to("Job Index", jobs_path)  %></li>
 
-			<%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
+					<% if (current_user.shipper=="Shipper") %>
+						<li><%= link_to("Create New Boat", new_boat_path)  %></li>
 
-			<% if (current_user.shipper=="Shipper") %>
-				<%= link_to("Create New Boat", new_boat_path)  %>
+					<% else (current_user.shipper=="Jobber")%>
+						<li><%= link_to("Create New Job", new_job_path) %></li>
+					<% end %>
 
-			<% else (current_user.shipper=="Jobber")%>
-				<%= link_to("Create New Job", new_job_path) %>
-        
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<%= link_to(destroy_user_session_path, method: :delete) do %>
+							<span class="glyphicon glyphicon-log-out"></span>
+							Sign Out
+						<% end %>	
+					</li>
+				</ul>
+
+			<% else %>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<%= link_to(new_user_registration_path) do %>
+							<span class="glyphicon glyphicon-user"></span>
+							Sign Up
+						<% end %>	
+					</li>
+					<li>
+						<%= link_to(new_user_session_path) do %>
+							<span class="glyphicon glyphicon-log-in"></span>
+							Sign In
+						<% end %>	
+					</li>
+				</ul>
 			<% end %>
-		<% else %>
-			<%= link_to("Sign In", new_user_session_path) %>
-			<%= link_to("Sign Up", new_user_registration_path) %>
-		<% end %>
-		<%= link_to("All Boats", boats_path)  %>
-		<%= link_to("All Jobs", jobs_path)  %>
+
+		</div>
 	</nav>
     <%= yield %>
   </body>
