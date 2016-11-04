@@ -16,3 +16,5 @@
 <%= select(:job, :destination, [['nyc', 'nyc'], ['pit', 'pit'], ['ba', 'ba'], ['philly', 'philly'], ['chicago', 'chicago'], ['miami', 'miami'], ['no', 'no'], ['hu','hu'], ['la', 'la'], ['ask', 'ask']]) %> <br>
 <%= f.submit %>
 <% end %>
+
+<%= button_to 'Delete Job',  { action: :destroy, id: @job.id }, method: :delete, data: { confirm: 'Are you sure?' } %>

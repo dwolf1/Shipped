@@ -39,6 +39,8 @@ end
 
 
   def destroy
+    Boat.delete(params[:id])
+  redirect_to url_for(:controller => :boats, :action => :index)
   end
 
   private

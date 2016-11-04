@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 
 
 <%= form_for @boat do |f| %>
@@ -17,6 +17,5 @@
 
 <%= f.submit %>
 <% end %>
-=======
-<h2 class="title">Edit Boat: <%= @boat.name %></h2>
->>>>>>> Stashed changes
+
+<%= button_to 'Delete Boat',  { action: :destroy, id: @boat.id }, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -39,6 +39,8 @@ class JobsController < ApplicationController
 
 
   def destroy
+    Job.delete(params[:id])
+  redirect_to url_for(:controller => :jobs, :action => :index)
   end
 
   #--------------
