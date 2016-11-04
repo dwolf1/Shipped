@@ -21,9 +21,9 @@
             <strong> amount of containers: </strong>
             <span> <%= @job.amount_of_containers %> </span>
             </p>
-         
 
-              <strong> Pick a boat for this Job </strong> 
+
+              <strong> Pick a boat for this Job </strong>
                             <strong> Pick a job for this boat </strong> <br>
               <%= form_for :assignment, url: {controller: "assignments", action: "create"} do |f| %>
                 <%= f.select "boat_id", options_from_collection_for_select(Boat.all, :id, :name) %><br>

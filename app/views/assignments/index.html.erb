@@ -1,0 +1,23 @@
+<h2 class="title">Contracts</h2>
+<div id="info" class="container-fluid">
+    <div class="table-responsive">
+    	<table class="table">
+			<tr>
+				<td>Boat </td>
+				<td></td>
+				<td>Job</td>
+			</tr>
+      <% @assignments.each do |assignment| %>
+      <% if !((@boat.exists?(id: [assignment.boat_id])&&
+             (@job.exists?(id: [assignment.job_id])))) %>
+      <% else %>
+			<tr>
+				<td><%= @boat.find(assignment.boat_id).name %></td>
+				<td><%= 'Has been contracted to' %></td>
+				<td><%= @job.find(assignment.job_id).title %></td>
+			</tr>
+      <% end %>
+			<% end %>
+		</table>
+    </div>
+</div>
