@@ -29,4 +29,7 @@ Rails.application.routes.draw do
 
   resources :assignments
   # post "/assignments/new" => "assignments#create"
+
+  #d3
+  get '/d3_data', to: 'd3_data#d3_data', as: 'd3_data'
 end
